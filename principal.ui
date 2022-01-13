@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Principal</class>
+ <widget class="QMainWindow" name="Principal">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>414</width>
+    <height>389</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Principal</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="Resources.qrc">
+    <normaloff>:/recursos/clima.png</normaloff>:/recursos/clima.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="title">
+       <string>Centigrados</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLCDNumber" name="outCent">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(85, 255, 127);</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QDial" name="inCent">
+         <property name="cursor">
+          <cursorShape>OpenHandCursor</cursorShape>
+         </property>
+         <property name="minimum">
+          <number>-18</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="title">
+       <string>Fahrenheith</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLCDNumber" name="outFahr">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(85, 170, 255);</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QDial" name="inFahr">
+         <property name="cursor">
+          <cursorShape>OpenHandCursor</cursorShape>
+         </property>
+         <property name="minimum">
+          <number>0</number>
+         </property>
+         <property name="maximum">
+          <number>210</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>414</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="Resources.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>inCent</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>outCent</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>106</x>
+     <y>277</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>106</x>
+     <y>125</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>inFahr</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>outFahr</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>307</x>
+     <y>277</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>307</x>
+     <y>125</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

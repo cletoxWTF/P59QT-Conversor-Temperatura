@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>recursos/clima.png</file>
+    </qresource>
+</RCC>
